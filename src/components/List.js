@@ -4,7 +4,9 @@ class List extends Component
 {
     render(){
         return (<ol>
-        {this.props.student.map((name,index) => <li key = {index}>{name}</li>)}  
+        {this.props.student.map((name,index) => <li key = {index}>{name}<button onClick={()=>{
+            this.props.onRemoveName(name)
+        }}>delete</button></li>)}  
      </ol>);
     }
 }
