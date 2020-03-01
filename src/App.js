@@ -1,31 +1,23 @@
 import React ,{Component} from 'react'
-import List from './components/List'
-import Title from './components/Title'
 import Navbar from './components/navbar'
-
+import Footer from './components/footer'
+import Home from './pages/home'
+import About from './pages/about'
+import Services from './pages/services'
+import Contact from './pages/contact'
+import Blog from './pages/blog'
 
 class App extends Component{
-  constructor() {
-    super()
-    this.state ={
-      student:['d','f']
-    }
-    this.removestudent=this.removestudent.bind(this)
-  }
-  removestudent(nameRemove)
-  {
-    console.log(nameRemove)
-    this.setState((state)=>({
-    names:state.student.filter(name => name !==nameRemove)
-    }))
-  }
   render(){
       return(
 <div class>
   <Navbar/>
-  <Title title={<h1>list of student</h1>} />
-  <List student={this.state.student} onRemoveName ={this.removestudent}/>
-
+  <Home/>
+  <About/>
+  <Services/>
+  <Blog/>
+  <Contact/>
+  <Footer/>
 </div>
       );
   }
